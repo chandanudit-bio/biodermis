@@ -1,5 +1,6 @@
 import { ArrowUpRight, Download } from "lucide-react";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 
 export default function Index() {
   return (
