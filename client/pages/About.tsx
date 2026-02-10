@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 
 export default function About() {
   return (
