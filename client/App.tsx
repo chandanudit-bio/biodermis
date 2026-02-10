@@ -14,6 +14,7 @@ import Blogs from "./pages/Blogs";
 import SingleBlog from "./pages/SingleBlog";
 import Gallery from "./pages/Gallery";
 import PharmaFranchise from "./pages/PharmaFranchise";
+import ThirdPartyManufacturing from "./pages/ThirdPartyManufacturing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
