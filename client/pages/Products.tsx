@@ -137,6 +137,19 @@ export default function Products() {
         <section className="py-12 bg-white">
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="flex flex-wrap justify-center gap-3 lg:gap-4">
+              {/* All Tab */}
+              <button
+                onClick={() => setActiveCategory("All")}
+                className={`px-6 lg:px-8 py-2 lg:py-3 rounded-full font-lufga text-[13px] lg:text-[14px] font-semibold transition-all duration-200 ${
+                  activeCategory === "All"
+                    ? "bg-[#8B1C52] text-white shadow-md"
+                    : "bg-white text-black border border-gray-200 hover:border-[#8B1C52]"
+                }`}
+              >
+                All ({products.length})
+              </button>
+
+              {/* Category Tabs */}
               {categories.map((category) => (
                 <button
                   key={category}
