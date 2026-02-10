@@ -52,17 +52,13 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function Products() {
-  const { categories, productsByCategory, isLoading, error } = useProducts();
-  const [activeCategory, setActiveCategory] = useState<string>("");
+  const { products, categories, productsByCategory, isLoading, error } = useProducts();
+  const [activeCategory, setActiveCategory] = useState<string>("All");
 
-  // Set active category to first category when categories are loaded
-  if (categories.length > 0 && !activeCategory) {
-    setActiveCategory(categories[0]);
-  }
-
-  const filteredProducts: Product[] = activeCategory
-    ? productsByCategory[activeCategory] || []
-    : [];
+  // Get filtered products based on active category
+  const filteredProducts: Product[] = activeCategory === "All"
+    ? products
+    : (activeCategory ? (productsByCategory[activeCategory] || []) : []);
 
   return (
     <div className="min-h-screen bg-white">
