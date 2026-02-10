@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 
 export default function PharmaFranchise() {
   const [formData, setFormData] = useState({
