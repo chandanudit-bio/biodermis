@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 import { useProducts } from "@/hooks/useProducts";
 import { Product } from "@shared/api";
 
