@@ -42,7 +42,7 @@ export default function PharmaFranchise() {
             <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
             <a href="/pharma-franchise" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Pharma Franchise</a>
             <a href="#manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="#gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
           </nav>
 
           <button className="lg:hidden p-2">
