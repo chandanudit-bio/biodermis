@@ -11,7 +11,10 @@ function stripHtmlTags(html: string): string {
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+    <a
+      href={`/products/${product.name}?category=${product.category}`}
+      className="group bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+    >
       {/* Product Image */}
       <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
         <img
@@ -44,7 +47,7 @@ function ProductCard({ product }: { product: Product }) {
           </div>
         )}
       </div>
-    </div>
+    </a>
   );
 }
 
