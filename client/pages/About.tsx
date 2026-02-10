@@ -23,7 +23,7 @@ export default function About() {
             <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
             <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
             <a href="#manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="#gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
           </nav>
 
           {/* Mobile menu button */}
