@@ -21,7 +21,7 @@ export default function Index() {
             <a href="/" className="text-primary hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
             <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="#blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
+            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
             <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
             <a href="#manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
             <a href="#gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
