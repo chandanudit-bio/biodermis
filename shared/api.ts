@@ -49,3 +49,14 @@ export interface Blog {
   created_at: string;
   updated_at: string | null;
 }
+
+/**
+ * Gallery image interface from the API
+ */
+export interface GalleryImage {
+  id: string;
+  Name: string;
+  image: string;
+  created_at: string;
+  updated_at: string | null;
+}
