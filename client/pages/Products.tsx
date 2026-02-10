@@ -1,83 +1,65 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import { useProducts } from "@/hooks/useProducts";
+import { Product } from "@shared/api";
 
-type Category = "All" | "Tablet" | "Softgel Capsule" | "Syrup" | "Promotional Item";
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  category: Category;
-  image: string;
+function stripHtmlTags(html: string): string {
+  const tmp = document.createElement('DIV');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
 }
 
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Advanced Multi-Vitamin Tablet",
-    description: "Complete daily nutrition in convenient tablet form",
-    category: "Tablet",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde0d?w=400&h=400&fit=crop"
-  },
-  {
-    id: 2,
-    name: "Omega-3 Softgel Capsules",
-    description: "Premium fish oil for heart and brain health",
-    category: "Softgel Capsule",
-    image: "https://images.unsplash.com/photo-1444391686981-461bbdba7137?w=400&h=400&fit=crop"
-  },
-  {
-    id: 3,
-    name: "Children's Vitamin C Syrup",
-    description: "Delicious orange-flavored immune support",
-    category: "Syrup",
-    image: "https://images.unsplash.com/photo-1563693869-ab89b988b588?w=400&h=400&fit=crop"
-  },
-  {
-    id: 4,
-    name: "Calcium Tablets",
-    description: "Essential calcium for strong bones",
-    category: "Tablet",
-    image: "https://images.unsplash.com/photo-1576091160671-112d4fbbc9f1?w=400&h=400&fit=crop"
-  },
-  {
-    id: 5,
-    name: "Probiotic Softgels",
-    description: "Support digestive and immune health",
-    category: "Softgel Capsule",
-    image: "https://images.unsplash.com/photo-1585461160633-ed0eab5f72f1?w=400&h=400&fit=crop"
-  },
-  {
-    id: 6,
-    name: "Cough Relief Syrup",
-    description: "Natural honey-based cough suppressant",
-    category: "Syrup",
-    image: "https://images.unsplash.com/photo-1579154204601-01d5d6f3838b?w=400&h=400&fit=crop"
-  },
-  {
-    id: 7,
-    name: "Branded Water Bottle",
-    description: "Premium stainless steel water bottle",
-    category: "Promotional Item",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de60e?w=400&h=400&fit=crop"
-  },
-  {
-    id: 8,
-    name: "Health Journal",
-    description: "Track your wellness journey",
-    category: "Promotional Item",
-    image: "https://images.unsplash.com/photo-1507842217343-583f7270bfba?w=400&h=400&fit=crop"
-  }
-];
+function ProductCard({ product }: { product: Product }) {
+  return (
+    <div className="group bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+      {/* Product Image */}
+      <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=Product+Image';
+          }}
+        />
+      </div>
+
+      {/* Product Info */}
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="font-lufga text-[16px] lg:text-[18px] font-bold text-[#8B1C52] mb-2">
+          {product.name}
+        </h3>
+        <p className="font-lufga text-[12px] lg:text-[13px] text-[#666666] mb-3">
+          <span className="font-semibold">Composition:</span> {product.composition.trim()}
+        </p>
+        <p className="font-lufga text-[12px] lg:text-[13px] text-[#999999] leading-[22px] mb-3">
+          <span className="font-semibold">Size:</span> {product.size}
+        </p>
+        <p className="font-lufga text-[12px] lg:text-[13px] text-[#999999]">
+          <span className="font-semibold">Package:</span> {product.package_type}
+        </p>
+        {product.description && (
+          <div className="mt-3 pt-3 border-t border-gray-200 text-[12px] text-[#666666] line-clamp-3">
+            {stripHtmlTags(product.description)}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function Products() {
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const { categories, productsByCategory, isLoading, error } = useProducts();
+  const [activeCategory, setActiveCategory] = useState<string>("");
 
-  const categories: Category[] = ["All", "Tablet", "Softgel Capsule", "Syrup", "Promotional Item"];
+  // Set active category to first category when categories are loaded
+  if (categories.length > 0 && !activeCategory) {
+    setActiveCategory(categories[0]);
+  }
 
-  const filteredProducts = activeCategory === "All" 
-    ? products 
-    : products.filter(p => p.category === activeCategory);
+  const filteredProducts: Product[] = activeCategory
+    ? productsByCategory[activeCategory] || []
+    : [];
 
   return (
     <div className="min-h-screen bg-white">
