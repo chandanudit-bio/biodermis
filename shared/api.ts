@@ -36,3 +36,16 @@ export interface Product {
 export interface ProductsByCategory {
   [category: string]: Product[];
 }
+
+/**
+ * Blog interface from the API
+ */
+export interface Blog {
+  id: string;
+  title: string;
+  tag: string;
+  image: string;
+  description: string;
+  created_at: string;
+  updated_at: string | null;
+}
