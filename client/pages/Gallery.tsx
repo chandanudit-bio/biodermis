@@ -26,8 +26,18 @@ function GalleryLightbox({
         onClick={onClose}
         className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-60"
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       </button>
 
@@ -38,7 +48,8 @@ function GalleryLightbox({
           alt="Gallery"
           className="max-w-full max-h-[80vh] object-contain rounded-lg"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x800?text=Image+Not+Found';
+            (e.target as HTMLImageElement).src =
+              "https://via.placeholder.com/1200x800?text=Image+Not+Found";
           }}
         />
       </div>
@@ -53,8 +64,18 @@ function GalleryLightbox({
             : "hover:bg-white/10 cursor-pointer"
         }`}
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
 
@@ -68,8 +89,18 @@ function GalleryLightbox({
             : "hover:bg-white/10 cursor-pointer"
         }`}
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
 
@@ -81,7 +112,13 @@ function GalleryLightbox({
   );
 }
 
-function GalleryGrid({ images, onImageClick }: { images: GalleryImage[]; onImageClick: (image: GalleryImage) => void }) {
+function GalleryGrid({
+  images,
+  onImageClick,
+}: {
+  images: GalleryImage[];
+  onImageClick: (image: GalleryImage) => void;
+}) {
   return (
     <div className="columns-1 md:columns-2 lg:columns-3 gap-6 lg:gap-8">
       {images.map((image) => (
@@ -95,11 +132,16 @@ function GalleryGrid({ images, onImageClick }: { images: GalleryImage[]; onImage
             alt="Gallery"
             className="w-full h-auto rounded-[15px] group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=Image';
+              (e.target as HTMLImageElement).src =
+                "https://via.placeholder.com/400x300?text=Image";
             }}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 rounded-[15px] transition-colors duration-300 flex items-center justify-center">
-            <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
             </svg>
           </div>
@@ -136,22 +178,57 @@ export default function Gallery() {
         <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px] h-[116px] flex items-center justify-between">
           <div className="flex items-center">
             <a href="/">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412" 
-                alt="Biodermis" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412"
+                alt="Biodermis"
                 className="h-[53px] w-auto"
               />
             </a>
           </div>
-          
+
           <nav className="hidden lg:flex items-center gap-8 font-lufga text-[14px] font-medium">
-            <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
-            <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
-            <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
-            <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
-            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="/gallery" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Gallery</a>
+            <a
+              href="/"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className="text-black hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="/products"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Our Products
+            </a>
+            <a
+              href="/blogs"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Blogs
+            </a>
+            <a
+              href="/pharma-franchise"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Pharma Franchise
+            </a>
+            <a
+              href="/third-party-manufacturing"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Third Party Manufacturing
+            </a>
+            <a
+              href="/gallery"
+              className="text-[#8B1C52] hover:text-primary transition-colors font-semibold"
+            >
+              Gallery
+            </a>
           </nav>
 
           {/* Mobile Navigation */}
@@ -183,7 +260,9 @@ export default function Gallery() {
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B1C52]"></div>
-              <p className="mt-4 text-gray-600 font-lufga">Loading gallery...</p>
+              <p className="mt-4 text-gray-600 font-lufga">
+                Loading gallery...
+              </p>
             </div>
           </div>
         </section>
@@ -194,9 +273,13 @@ export default function Gallery() {
         <section className="py-24 bg-white">
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
-              <h3 className="text-red-600 font-lufga text-xl mb-2">Error Loading Gallery</h3>
+              <h3 className="text-red-600 font-lufga text-xl mb-2">
+                Error Loading Gallery
+              </h3>
               <p className="text-red-500 text-sm font-lufga">
-                {error instanceof Error ? error.message : 'Failed to fetch gallery images'}
+                {error instanceof Error
+                  ? error.message
+                  : "Failed to fetch gallery images"}
               </p>
             </div>
           </div>
@@ -211,7 +294,9 @@ export default function Gallery() {
               <GalleryGrid images={images} onImageClick={setSelectedImage} />
             ) : (
               <div className="text-center py-12">
-                <p className="text-gray-500 font-lufga text-lg">No gallery images found</p>
+                <p className="text-gray-500 font-lufga text-lg">
+                  No gallery images found
+                </p>
               </div>
             )}
           </div>

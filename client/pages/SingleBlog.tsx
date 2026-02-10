@@ -7,11 +7,13 @@ export default function SingleBlog() {
   const { id } = useParams<{ id: string }>();
   const { blog, isLoading, error } = useBlog(id);
 
-  const dateStr = blog ? new Date(blog.created_at).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }) : '';
+  const dateStr = blog
+    ? new Date(blog.created_at).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : "";
 
   return (
     <div className="min-h-screen bg-white">
@@ -20,22 +22,57 @@ export default function SingleBlog() {
         <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px] h-[116px] flex items-center justify-between">
           <div className="flex items-center">
             <a href="/">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412" 
-                alt="Biodermis" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412"
+                alt="Biodermis"
                 className="h-[53px] w-auto"
               />
             </a>
           </div>
-          
+
           <nav className="hidden lg:flex items-center gap-8 font-lufga text-[14px] font-medium">
-            <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
-            <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
-            <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="/blogs" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Blogs</a>
-            <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
-            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a
+              href="/"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className="text-black hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="/products"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Our Products
+            </a>
+            <a
+              href="/blogs"
+              className="text-[#8B1C52] hover:text-primary transition-colors font-semibold"
+            >
+              Blogs
+            </a>
+            <a
+              href="/pharma-franchise"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Pharma Franchise
+            </a>
+            <a
+              href="/third-party-manufacturing"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Third Party Manufacturing
+            </a>
+            <a
+              href="/gallery"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Gallery
+            </a>
           </nav>
 
           {/* Mobile Navigation */}
@@ -60,9 +97,13 @@ export default function SingleBlog() {
         <section className="pt-[116px] pb-20 bg-white">
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center mt-8">
-              <h3 className="text-red-600 font-lufga text-xl mb-2">Error Loading Blog</h3>
+              <h3 className="text-red-600 font-lufga text-xl mb-2">
+                Error Loading Blog
+              </h3>
               <p className="text-red-500 text-sm font-lufga mb-6">
-                {error instanceof Error ? error.message : 'Failed to fetch blog'}
+                {error instanceof Error
+                  ? error.message
+                  : "Failed to fetch blog"}
               </p>
               <a
                 href="/blogs"
@@ -80,7 +121,9 @@ export default function SingleBlog() {
         <section className="pt-[116px] pb-20 bg-white">
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center mt-8">
-              <h3 className="text-red-600 font-lufga text-xl mb-2">Blog Not Found</h3>
+              <h3 className="text-red-600 font-lufga text-xl mb-2">
+                Blog Not Found
+              </h3>
               <p className="text-red-500 text-sm font-lufga mb-6">
                 Sorry, the blog you're looking for doesn't exist.
               </p>
@@ -129,7 +172,8 @@ export default function SingleBlog() {
                   alt={blog.title}
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x600?text=Blog+Image';
+                    (e.target as HTMLImageElement).src =
+                      "https://via.placeholder.com/1200x600?text=Blog+Image";
                   }}
                 />
               </div>
@@ -153,7 +197,7 @@ export default function SingleBlog() {
                     Tags
                   </h3>
                   <div className="flex flex-wrap gap-3">
-                    {blog.tag.split(',').map((tag, index) => (
+                    {blog.tag.split(",").map((tag, index) => (
                       <span
                         key={index}
                         className="inline-block bg-[#FDECEF] text-[#8B1C52] px-4 py-2 rounded-full font-lufga text-[13px] font-semibold"

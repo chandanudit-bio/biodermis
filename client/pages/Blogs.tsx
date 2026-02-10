@@ -4,17 +4,17 @@ import { useBlogs } from "@/hooks/useBlogs";
 import { Blog } from "@shared/api";
 
 function stripHtmlTags(html: string): string {
-  const tmp = document.createElement('DIV');
+  const tmp = document.createElement("DIV");
   tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || '';
+  return tmp.textContent || tmp.innerText || "";
 }
 
 function BlogCard({ blog }: { blog: Blog }) {
   const excerpt = stripHtmlTags(blog.description).substring(0, 150) + "...";
-  const dateStr = new Date(blog.created_at).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  const dateStr = new Date(blog.created_at).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -29,7 +29,8 @@ function BlogCard({ blog }: { blog: Blog }) {
           alt={blog.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x338?text=Blog+Image';
+            (e.target as HTMLImageElement).src =
+              "https://via.placeholder.com/600x338?text=Blog+Image";
           }}
         />
       </div>
@@ -64,22 +65,57 @@ export default function Blogs() {
         <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px] h-[116px] flex items-center justify-between">
           <div className="flex items-center">
             <a href="/">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412" 
-                alt="Biodermis" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412"
+                alt="Biodermis"
                 className="h-[53px] w-auto"
               />
             </a>
           </div>
-          
+
           <nav className="hidden lg:flex items-center gap-8 font-lufga text-[14px] font-medium">
-            <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
-            <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
-            <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="/blogs" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Blogs</a>
-            <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
-            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a
+              href="/"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className="text-black hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="/products"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Our Products
+            </a>
+            <a
+              href="/blogs"
+              className="text-[#8B1C52] hover:text-primary transition-colors font-semibold"
+            >
+              Blogs
+            </a>
+            <a
+              href="/pharma-franchise"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Pharma Franchise
+            </a>
+            <a
+              href="/third-party-manufacturing"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Third Party Manufacturing
+            </a>
+            <a
+              href="/gallery"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Gallery
+            </a>
           </nav>
 
           {/* Mobile Navigation */}
@@ -99,7 +135,8 @@ export default function Blogs() {
               Our <span className="text-[#8B1C52]">Blogs</span>
             </h1>
             <p className="font-lufga text-[16px] lg:text-[18px] text-[#666666] max-w-2xl mx-auto">
-              Stay updated with the latest insights and news from the pharmaceutical industry
+              Stay updated with the latest insights and news from the
+              pharmaceutical industry
             </p>
           </div>
         </div>
@@ -122,9 +159,13 @@ export default function Blogs() {
         <section className="py-24 bg-white">
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
-              <h3 className="text-red-600 font-lufga text-xl mb-2">Error Loading Blogs</h3>
+              <h3 className="text-red-600 font-lufga text-xl mb-2">
+                Error Loading Blogs
+              </h3>
               <p className="text-red-500 text-sm font-lufga">
-                {error instanceof Error ? error.message : 'Failed to fetch blogs'}
+                {error instanceof Error
+                  ? error.message
+                  : "Failed to fetch blogs"}
               </p>
             </div>
           </div>
@@ -143,7 +184,9 @@ export default function Blogs() {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-gray-500 font-lufga text-lg">No blogs found</p>
+                <p className="text-gray-500 font-lufga text-lg">
+                  No blogs found
+                </p>
               </div>
             )}
           </div>

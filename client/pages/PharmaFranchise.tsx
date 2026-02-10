@@ -9,18 +9,29 @@ export default function PharmaFranchise() {
     phone: "",
     city: "",
     investment: "",
-    message: ""
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    setFormData({ fullName: "", email: "", phone: "", city: "", investment: "", message: "" });
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      city: "",
+      investment: "",
+      message: "",
+    });
   };
 
   return (
@@ -29,21 +40,56 @@ export default function PharmaFranchise() {
       <header className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
         <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px] h-[116px] flex items-center justify-between">
           <div className="flex items-center">
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412" 
-              alt="Biodermis" 
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412"
+              alt="Biodermis"
               className="h-[53px] w-auto"
             />
           </div>
-          
+
           <nav className="hidden lg:flex items-center gap-8 font-lufga text-[14px] font-medium">
-            <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
-            <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
-            <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
-            <a href="/pharma-franchise" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Pharma Franchise</a>
-            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a
+              href="/"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className="text-black hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="/products"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Our Products
+            </a>
+            <a
+              href="/blogs"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Blogs
+            </a>
+            <a
+              href="/pharma-franchise"
+              className="text-[#8B1C52] hover:text-primary transition-colors font-semibold"
+            >
+              Pharma Franchise
+            </a>
+            <a
+              href="/third-party-manufacturing"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Third Party Manufacturing
+            </a>
+            <a
+              href="/gallery"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Gallery
+            </a>
           </nav>
 
           {/* Mobile Navigation */}
@@ -73,68 +119,107 @@ export default function PharmaFranchise() {
           {/* Introduction */}
           <div className="max-w-4xl mx-auto mb-16">
             <p className="font-lufga text-[15px] text-[#666666] leading-[26px] mb-6">
-              Biodermis Pharma aims to expand its network always. We are one of India's leading PCD pharma companies, offering pharma franchises and PCD pharma. If you're seeking a pharma PCD, look no further. We provide the most exceptional promotional benefits. Our philosophy is to give unsurpassed service and unbeatable prices to our customers, allowing them to improve the healthcare and wellbeing. We have a large PCD pharma franchise network in India.
+              Biodermis Pharma aims to expand its network always. We are one of
+              India's leading PCD pharma companies, offering pharma franchises
+              and PCD pharma. If you're seeking a pharma PCD, look no further.
+              We provide the most exceptional promotional benefits. Our
+              philosophy is to give unsurpassed service and unbeatable prices to
+              our customers, allowing them to improve the healthcare and
+              wellbeing. We have a large PCD pharma franchise network in India.
             </p>
 
             <p className="font-lufga text-[15px] text-[#666666] leading-[26px]">
-              Pharma franchise refers to a business model in the pharmaceutical industry where a company grants permission to an individual or group to operate under its established brand and sell its products in a specific geographic area.
+              Pharma franchise refers to a business model in the pharmaceutical
+              industry where a company grants permission to an individual or
+              group to operate under its established brand and sell its products
+              in a specific geographic area.
             </p>
           </div>
 
           {/* Best Pharma Franchise Section */}
           <div className="mb-16">
             <h2 className="font-lufga text-[20px] text-[#8B1C52] font-bold mb-8 flex items-center gap-2">
-              <span className="text-[#8B1C52] text-2xl">★</span> Best Pharma Franchise | Biodermis Pharma
+              <span className="text-[#8B1C52] text-2xl">★</span> Best Pharma
+              Franchise | Biodermis Pharma
             </h2>
 
             <p className="font-lufga text-[15px] text-[#666666] leading-[26px] mb-6">
-              The company is a leading supplier of goods that provide value to customers' lives by meeting their health demands and improving their quality of life. Biodermis Pharma has made significant investments in becoming one of India's leading PCD pharma companies. With us, you can work in your own space, free from work pressure and regulatory challenges—helping you reach your goals quickly.
+              The company is a leading supplier of goods that provide value to
+              customers' lives by meeting their health demands and improving
+              their quality of life. Biodermis Pharma has made significant
+              investments in becoming one of India's leading PCD pharma
+              companies. With us, you can work in your own space, free from work
+              pressure and regulatory challenges—helping you reach your goals
+              quickly.
             </p>
 
             <p className="font-lufga text-[15px] text-[#666666] leading-[26px]">
-              A franchise is an authority issued by an organization to perform specific work within a niche—such as selling items or providing services. Iconic Lifesciences stands out by adhering to the highest quality standards and offering the best-value medications to improve lives.
+              A franchise is an authority issued by an organization to perform
+              specific work within a niche—such as selling items or providing
+              services. Iconic Lifesciences stands out by adhering to the
+              highest quality standards and offering the best-value medications
+              to improve lives.
             </p>
           </div>
 
           {/* Top Leading PCD Section */}
           <div className="mb-16">
             <h2 className="font-lufga text-[20px] text-[#8B1C52] font-bold mb-8 flex items-center gap-2">
-              <span className="text-[#8B1C52] text-2xl">★</span> Top Leading PCD Pharma Company in India
+              <span className="text-[#8B1C52] text-2xl">★</span> Top Leading PCD
+              Pharma Company in India
             </h2>
 
             <p className="font-lufga text-[15px] text-[#666666] leading-[26px] mb-6">
-              Many pharma professionals are searching for pharma franchise opportunities, and Iconic Lifesciences is ready to assist. If you're looking for guidance, we provide transparent and strategic advice to help you choose the best franchise company.
+              Many pharma professionals are searching for pharma franchise
+              opportunities, and Iconic Lifesciences is ready to assist. If
+              you're looking for guidance, we provide transparent and strategic
+              advice to help you choose the best franchise company.
             </p>
 
             <p className="font-lufga text-[15px] text-[#666666] leading-[26px]">
-              Consider factors like monopoly rights, product range, sales performance, rent rates, and value-added services. Choose products not just for profits, but for the betterment of people's health. For any assistance, feel free to get in touch with us.
+              Consider factors like monopoly rights, product range, sales
+              performance, rent rates, and value-added services. Choose products
+              not just for profits, but for the betterment of people's health.
+              For any assistance, feel free to get in touch with us.
             </p>
           </div>
 
           {/* Contact For Section */}
           <div className="bg-gray-50 rounded-[16px] p-10 mb-16">
-            <p className="font-lufga text-[15px] text-[#666666] font-semibold mb-6">Contact us now for:</p>
-            
+            <p className="font-lufga text-[15px] text-[#666666] font-semibold mb-6">
+              Contact us now for:
+            </p>
+
             <div className="space-y-4">
               <div className="flex gap-3 items-start">
                 <span className="text-[#8B1C52] font-bold mt-1">●</span>
-                <p className="font-lufga text-[15px] text-[#666666]">Pharma Franchise</p>
+                <p className="font-lufga text-[15px] text-[#666666]">
+                  Pharma Franchise
+                </p>
               </div>
               <div className="flex gap-3 items-start">
                 <span className="text-[#8B1C52] font-bold mt-1">●</span>
-                <p className="font-lufga text-[15px] text-[#666666]">Pharma Franchise Companies</p>
+                <p className="font-lufga text-[15px] text-[#666666]">
+                  Pharma Franchise Companies
+                </p>
               </div>
               <div className="flex gap-3 items-start">
                 <span className="text-[#8B1C52] font-bold mt-1">●</span>
-                <p className="font-lufga text-[15px] text-[#666666]">PCD Pharma Franchise</p>
+                <p className="font-lufga text-[15px] text-[#666666]">
+                  PCD Pharma Franchise
+                </p>
               </div>
               <div className="flex gap-3 items-start">
                 <span className="text-[#8B1C52] font-bold mt-1">●</span>
-                <p className="font-lufga text-[15px] text-[#666666]">PCD Pharma Companies</p>
+                <p className="font-lufga text-[15px] text-[#666666]">
+                  PCD Pharma Companies
+                </p>
               </div>
               <div className="flex gap-3 items-start">
                 <span className="text-[#8B1C52] font-bold mt-1">●</span>
-                <p className="font-lufga text-[15px] text-[#666666]">PCD Pharma Franchise Companies</p>
+                <p className="font-lufga text-[15px] text-[#666666]">
+                  PCD Pharma Franchise Companies
+                </p>
               </div>
             </div>
           </div>
@@ -150,13 +235,16 @@ export default function PharmaFranchise() {
                 Start Your Franchise Journey
               </h2>
               <p className="font-lufga text-[14px] text-white/80 mb-10">
-                Fill in your details and our team will get back to you within 24 hours
+                Fill in your details and our team will get back to you within 24
+                hours
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Full Name */}
                 <div>
-                  <label className="block font-lufga text-[13px] font-semibold mb-2">Full Name *</label>
+                  <label className="block font-lufga text-[13px] font-semibold mb-2">
+                    Full Name *
+                  </label>
                   <input
                     type="text"
                     name="fullName"
@@ -171,7 +259,9 @@ export default function PharmaFranchise() {
                 {/* Email & Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-lufga text-[13px] font-semibold mb-2">Email *</label>
+                    <label className="block font-lufga text-[13px] font-semibold mb-2">
+                      Email *
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -183,7 +273,9 @@ export default function PharmaFranchise() {
                     />
                   </div>
                   <div>
-                    <label className="block font-lufga text-[13px] font-semibold mb-2">Phone *</label>
+                    <label className="block font-lufga text-[13px] font-semibold mb-2">
+                      Phone *
+                    </label>
                     <input
                       type="tel"
                       name="phone"
@@ -199,7 +291,9 @@ export default function PharmaFranchise() {
                 {/* City & Investment */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-lufga text-[13px] font-semibold mb-2">City *</label>
+                    <label className="block font-lufga text-[13px] font-semibold mb-2">
+                      City *
+                    </label>
                     <input
                       type="text"
                       name="city"
@@ -211,7 +305,9 @@ export default function PharmaFranchise() {
                     />
                   </div>
                   <div>
-                    <label className="block font-lufga text-[13px] font-semibold mb-2">Expected Investment</label>
+                    <label className="block font-lufga text-[13px] font-semibold mb-2">
+                      Expected Investment
+                    </label>
                     <select
                       name="investment"
                       value={formData.investment}
@@ -229,7 +325,9 @@ export default function PharmaFranchise() {
 
                 {/* Message */}
                 <div>
-                  <label className="block font-lufga text-[13px] font-semibold mb-2">Message</label>
+                  <label className="block font-lufga text-[13px] font-semibold mb-2">
+                    Message
+                  </label>
                   <textarea
                     name="message"
                     value={formData.message}

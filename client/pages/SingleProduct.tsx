@@ -6,9 +6,9 @@ import { useProducts } from "@/hooks/useProducts";
 import { Product } from "@shared/api";
 
 function stripHtmlTags(html: string): string {
-  const tmp = document.createElement('DIV');
+  const tmp = document.createElement("DIV");
   tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || '';
+  return tmp.textContent || tmp.innerText || "";
 }
 
 export default function SingleProduct() {
@@ -16,7 +16,7 @@ export default function SingleProduct() {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
   const { products, productsByCategory, categories, isLoading } = useProducts();
-  
+
   const [activeSubcategory, setActiveSubcategory] = useState<string>("");
   const [currentProduct, setCurrentProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
@@ -27,16 +27,20 @@ export default function SingleProduct() {
     if (products.length === 0) return;
 
     // Find the product matching the ID (product name from URL)
-    const product = products.find(p => p.name === id || p.id === id);
+    const product = products.find((p) => p.name === id || p.id === id);
     setCurrentProduct(product || null);
 
     if (category && productsByCategory[category]) {
       // Get unique subcategories for this category
       const uniqueSubcats = Array.from(
-        new Set(productsByCategory[category].map(p => p.subcategory_name).filter(Boolean))
+        new Set(
+          productsByCategory[category]
+            .map((p) => p.subcategory_name)
+            .filter(Boolean),
+        ),
       ).sort();
       setSubcategories(uniqueSubcats);
-      
+
       if (uniqueSubcats.length > 0 && !activeSubcategory) {
         setActiveSubcategory(uniqueSubcats[0]);
       }
@@ -44,7 +48,9 @@ export default function SingleProduct() {
       // Get related products
       let related = productsByCategory[category];
       if (activeSubcategory) {
-        related = related.filter(p => p.subcategory_name === activeSubcategory);
+        related = related.filter(
+          (p) => p.subcategory_name === activeSubcategory,
+        );
       }
       setRelatedProducts(related);
     }
@@ -63,22 +69,57 @@ export default function SingleProduct() {
         <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px] h-[116px] flex items-center justify-between">
           <div className="flex items-center">
             <a href="/">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412" 
-                alt="Biodermis" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/f5d8be47c68650aaf5f848c7a1e6d67cb6b70587?width=412"
+                alt="Biodermis"
                 className="h-[53px] w-auto"
               />
             </a>
           </div>
-          
+
           <nav className="hidden lg:flex items-center gap-8 font-lufga text-[14px] font-medium">
-            <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
-            <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
-            <a href="/products" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Our Products</a>
-            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
-            <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
-            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a
+              href="/"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className="text-black hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="/products"
+              className="text-[#8B1C52] hover:text-primary transition-colors font-semibold"
+            >
+              Our Products
+            </a>
+            <a
+              href="/blogs"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Blogs
+            </a>
+            <a
+              href="/pharma-franchise"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Pharma Franchise
+            </a>
+            <a
+              href="/third-party-manufacturing"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Third Party Manufacturing
+            </a>
+            <a
+              href="/gallery"
+              className="text-black hover:text-primary transition-colors"
+            >
+              Gallery
+            </a>
           </nav>
 
           {/* Mobile Navigation */}
@@ -130,7 +171,9 @@ export default function SingleProduct() {
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B1C52]"></div>
-              <p className="mt-4 text-gray-600 font-lufga">Loading product...</p>
+              <p className="mt-4 text-gray-600 font-lufga">
+                Loading product...
+              </p>
             </div>
           </div>
         </section>
@@ -149,7 +192,8 @@ export default function SingleProduct() {
                     alt={currentProduct.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/450x400?text=Product+Image';
+                      (e.target as HTMLImageElement).src =
+                        "https://via.placeholder.com/450x400?text=Product+Image";
                     }}
                   />
                 </div>
@@ -237,35 +281,39 @@ export default function SingleProduct() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {relatedProducts.filter(p => p.id !== currentProduct?.id).slice(0, 6).map((product) => (
-                <a
-                  key={product.id}
-                  href={`/products/${product.name}?category=${product.category}`}
-                  className="group bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col"
-                >
-                  {/* Product Image */}
-                  <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=Product';
-                      }}
-                    />
-                  </div>
+              {relatedProducts
+                .filter((p) => p.id !== currentProduct?.id)
+                .slice(0, 6)
+                .map((product) => (
+                  <a
+                    key={product.id}
+                    href={`/products/${product.name}?category=${product.category}`}
+                    className="group bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+                  >
+                    {/* Product Image */}
+                    <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            "https://via.placeholder.com/400x300?text=Product";
+                        }}
+                      />
+                    </div>
 
-                  {/* Product Info */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="font-lufga text-[16px] lg:text-[18px] font-bold text-[#8B1C52] mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="font-lufga text-[12px] lg:text-[13px] text-[#666666] leading-[22px] line-clamp-3">
-                      {product.composition.trim()}
-                    </p>
-                  </div>
-                </a>
-              ))}
+                    {/* Product Info */}
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="font-lufga text-[16px] lg:text-[18px] font-bold text-[#8B1C52] mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="font-lufga text-[12px] lg:text-[13px] text-[#666666] leading-[22px] line-clamp-3">
+                        {product.composition.trim()}
+                      </p>
+                    </div>
+                  </a>
+                ))}
             </div>
           </div>
         </section>
@@ -276,7 +324,9 @@ export default function SingleProduct() {
         <section className="py-24 bg-white">
           <div className="max-w-[1366px] mx-auto px-4 lg:px-[75px]">
             <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
-              <h3 className="text-red-600 font-lufga text-xl mb-2">Product Not Found</h3>
+              <h3 className="text-red-600 font-lufga text-xl mb-2">
+                Product Not Found
+              </h3>
               <p className="text-red-500 text-sm font-lufga mb-6">
                 Sorry, the product you're looking for doesn't exist.
               </p>
