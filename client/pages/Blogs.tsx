@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 import { useBlogs } from "@/hooks/useBlogs";
 import { Blog } from "@shared/api";
 
