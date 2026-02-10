@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 import { useGallery } from "@/hooks/useGallery";
 import { GalleryImage } from "@shared/api";
 
