@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import SingleProduct from "./pages/SingleProduct";
 import PharmaFranchise from "./pages/PharmaFranchise";
 import NotFound from "./pages/NotFound";
 
