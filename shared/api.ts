@@ -10,3 +10,29 @@
 export interface DemoResponse {
   message: string;
 }
+
+/**
+ * Product interface from the API
+ */
+export interface Product {
+  id: string;
+  name: string;
+  visual_aid: string;
+  image: string;
+  composition: string;
+  size: string;
+  package_type: string;
+  category: string;
+  category_slug: string | null;
+  subcategory_name: string;
+  description: string;
+  created_at: string;
+  updated_at: string | null;
+}
+
+/**
+ * Type for grouped products by category
+ */
+export interface ProductsByCategory {
+  [category: string]: Product[];
+}
