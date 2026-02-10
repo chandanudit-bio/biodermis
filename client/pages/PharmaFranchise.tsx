@@ -38,11 +38,11 @@ export default function PharmaFranchise() {
           <nav className="hidden lg:flex items-center gap-8 font-lufga text-[14px] font-medium">
             <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
-            <a href="#products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="#blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
+            <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
+            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
             <a href="/pharma-franchise" className="text-[#8B1C52] hover:text-primary transition-colors font-semibold">Pharma Franchise</a>
-            <a href="#manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="#gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
+            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
           </nav>
 
           <button className="lg:hidden p-2">
