@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 import { useProducts } from "@/hooks/useProducts";
 import { Product } from "@shared/api";
 
