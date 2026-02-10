@@ -12,6 +12,7 @@ import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProduct";
 import Blogs from "./pages/Blogs";
 import SingleBlog from "./pages/SingleBlog";
+import Gallery from "./pages/Gallery";
 import PharmaFranchise from "./pages/PharmaFranchise";
 import NotFound from "./pages/NotFound";
 
