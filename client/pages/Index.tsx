@@ -21,10 +21,10 @@ export default function Index() {
             <a href="/" className="text-primary hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
             <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="#blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
+            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
             <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
-            <a href="#manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="#gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
+            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
           </nav>
 
           {/* Mobile menu button */}
@@ -60,15 +60,15 @@ export default function Index() {
         />
 
         {/* Content */}
-        <div className="relative max-w-[1366px] mx-auto px-4 lg:px-[75px] py-20 lg:py-32">
+        <div className="relative max-w-[1366px] mx-auto px-4 lg:px-[75px]">
           <div className="max-w-[527px]">
             <h1 className="font-regals text-[clamp(48px,8vw,85px)] leading-[1.06] mb-6 lg:mb-8">
               Simple. Pure.<br />Powerful.
             </h1>
-            <p className="font-lufga text-[clamp(18px,2.5vw,25px)] font-semibold leading-normal mb-10 lg:mb-12">
+            <p className="font-lufga text-[clamp(18px,2.5vw,10px)] font-semibold leading-normal mb-10 lg:mb-12">
               Skincare without the clutter — only clean, effective formulas designed to bring out your best skin.
             </p>
-            <button className="inline-flex items-center justify-center px-[60px] py-[17px] bg-primary text-white font-lufga text-[25px] font-semibold rounded-[15px] hover:bg-primary/90 transition-colors">
+            <button className="inline-flex items-center justify-center px-[10px] py-[10px] bg-primary text-white font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/90 transition-colors">
               Explore More
             </button>
           </div>
@@ -189,11 +189,11 @@ export default function Index() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="inline-flex items-center justify-center gap-2 px-10 py-[17px] bg-primary text-white font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/90 transition-colors">
+                <button className="inline-flex items-center justify-center gap-2 px-5 py-[5px] bg-primary text-white font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/90 transition-colors">
                   Know More
                   <ArrowUpRight className="w-[18px] h-[18px]" />
                 </button>
-                <button className="inline-flex items-center justify-center gap-2 px-8 py-[17px] border-2 border-primary text-primary font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/5 transition-colors">
+                <button className="inline-flex items-center justify-center gap-2 px-5 py-[5px] border-2 border-primary text-primary font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/5 transition-colors">
                   Download Product Catalogue
                   <Download className="w-[21px] h-[21px]" />
                 </button>
@@ -364,7 +364,7 @@ export default function Index() {
               <p className="font-lufga text-[15px] text-[#454545] leading-[24px] mb-8">
                 Give your skin the deep hydration it craves with our lightweight, moisture-locking formulas. Perfect for a dewy, healthy glow all day long.
               </p>
-              <button className="inline-flex items-center justify-center gap-2 px-10 py-[17px] bg-primary text-white font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/90 transition-colors">
+              <button className="inline-flex items-center justify-center gap-2 px-10 py-[10px] bg-primary text-white font-lufga text-[18px] font-semibold rounded-[15px] hover:bg-primary/90 transition-colors">
                 Know More
                 <ArrowUpRight className="w-[18px] h-[18px]" />
               </button>

@@ -20,10 +20,10 @@ export default function About() {
             <a href="/" className="text-black hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-black hover:text-primary transition-colors">About</a>
             <a href="/products" className="text-black hover:text-primary transition-colors">Our Products</a>
-            <a href="#blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
+            <a href="/blogs" className="text-black hover:text-primary transition-colors">Blogs</a>
             <a href="/pharma-franchise" className="text-black hover:text-primary transition-colors">Pharma Franchise</a>
-            <a href="#manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
-            <a href="#gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
+            <a href="/third-party-manufacturing" className="text-black hover:text-primary transition-colors">Third Party Manufacturing</a>
+            <a href="/gallery" className="text-black hover:text-primary transition-colors">Gallery</a>
           </nav>
 
           {/* Mobile menu button */}
@@ -41,7 +41,8 @@ export default function About() {
         <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-white/40 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-20 left-0 w-[350px] h-[350px] bg-white/30 rounded-full blur-3xl"></div>
 
-        <div className="relative max-w-[1366px] mx-auto px-4 lg:px-[75px]">
+      <div className="relative max-w-[1366px] mx-auto px-4 lg:px-[75px] pt-20">
+
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="font-regals text-[48px] lg:text-[56px] leading-[1.2] mb-6 text-black font-bold">
               Our Story of<br />
